@@ -1,3 +1,15 @@
+/*
+The main goal is working with Parcel. Parcel is an interface with an environment
+that allows you to combine separate pieces of code into one project using
+third-party libraries for ready-made solutions.
+*/
+
+/*
+Основна мета - робота із Parcel. Parcel - це інтерфейс із серидовищем, які
+дозволяють об'єднати розрізнені частини коду в один проект із використанням
+сторонніх бібліотек для готових рішень.
+*/
+
 // Add imports above this line
 
 // Описаний в документації
