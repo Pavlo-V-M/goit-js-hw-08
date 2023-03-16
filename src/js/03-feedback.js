@@ -181,6 +181,7 @@ function populateTextarea() {
 
   if (savedData) {
     const { email, message } = JSON.parse(savedData);
+    localStorageObject = JSON.parse(savedData);
 
     refs.textarea.value = message || '';
     refs.email.value = email || '';
