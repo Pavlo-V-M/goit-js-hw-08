@@ -123,11 +123,29 @@ the default behavior of the event and resets the form. It also removes
 any saved form data from local storage.
 */
 
+// function onFormSubmit(evt) {
+//   evt.preventDefault();
+//   evt.currentTarget.reset();
+
+//   localStorage.removeItem('STORAGE_KEY');
+// };
+
+// ---------------------------------------------------------------
+// ----------------- FIXED ABOVE CODE IN POINT 8 -----------------
+// ---------------------------------------------------------------
+
 function onFormSubmit(evt) {
+  if (!refs.email.value || !refs.textarea.value) {
+    alert('Please fill in all fields!');
+    return;
+  }
+
   evt.preventDefault();
   evt.currentTarget.reset();
 
+  console.log({ email: refs.email.value, message: refs.textarea.value });
   localStorage.removeItem('STORAGE_KEY');
+  localStorageObject = {};
 };
 
 /* 9.
@@ -164,7 +182,7 @@ function populateTextarea() {
   if (savedData) {
     const { email, message } = JSON.parse(savedData);
 
-    refs.textarea.value = message;
-    refs.email.value = email;
+    refs.textarea.value = message || '';
+    refs.email.value = email || '';
   }
 };
